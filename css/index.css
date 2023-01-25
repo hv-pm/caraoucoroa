@@ -1,0 +1,154 @@
+:root {
+    --front-face: url("../img/coin_front.png");
+    --back-face: url("../img/coin_back.png");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.credits {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    opacity: 0.5;
+    background-image: url("../img/credits.png");
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.credits:hover {
+    opacity: 1;
+}
+
+body{
+    min-height: 100vh;
+    place-items: center;
+    display: grid;
+    background-color:black;
+}
+
+.coin{
+    position: relative;
+    perspective-origin: 50% calc(50% - 150px);
+    transform-style: preserve-3d;
+    transform: rotateX(1531deg) scale3d(30%, 30%, 30%);
+    cursor: pointer;
+}
+
+.coin-front{
+    position: absolute;
+    transform: translate(-50%,-44%) rotateX(90deg) rotateZ(180deg);
+    transform-style: preserve-3d;
+    width: 235px;
+    height: 235px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../img/coin_front.png");
+}
+
+.coin-back{
+    position: absolute;
+    transform: translate(-50%,-56%) rotateX(90deg); 
+    transform-style: preserve-3d;
+    width: 235px;
+    height: 235px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../img/coin_back.png");
+}
+
+.fill{
+    display:flex;
+    transform-style: preserve-3d;
+}
+
+@keyframes rotate{
+    0% {transform: rotateX(91deg) scale3d(30%, 30%, 30%);
+        -webkit-animation-timing-function: ease-out;}
+    25%{transform: rotateX(800deg) scale3d(100%, 100%, 100%);
+        -webkit-animation-timing-function: ease-in;}
+    60% {transform: rotateX(1570deg) scale3d(30%, 30%, 30%);
+        -webkit-animation-timing-function: linear;}
+    66% {transform: rotateX(1478deg) scale3d(30%, 30%, 30%);}
+    72% {transform: rotateX(1555deg) scale3d(30%, 30%, 30%);}
+    78% {transform: rotateX(1485deg) scale3d(30%, 30%, 30%);}
+    84% {transform: rotateX(1548deg) scale3d(30%, 30%, 30%);}
+    90% {transform: rotateX(1508deg) scale3d(30%, 30%, 30%);}
+    95% {transform: rotateX(1531deg) scale3d(30%, 30%, 30%);}
+    100% {transform: rotateX(1531deg) scale3d(30%, 30%, 30%);}
+}
+
+@keyframes result-front{
+    0% {background-image: url("../img/coin_front.png");}
+    35% {background-image: url("../img/coin_front.png");}
+    36%{background-image: var(--front-face);}
+    100%{background-image: var(--front-face);}
+}
+
+@keyframes result-back{
+    0% {background-image: url("../img/coin_back.png");}
+    35% {background-image: url("../img/coin_back.png");}
+    36%{background-image: var(--back-face);}
+    100%{background-image: var(--back-face);}
+}
+
+.panel{
+    position: absolute;
+    transform: translate(-50%,-50%) rotateY(var(--angle)) translateZ(115px);
+    width: 50px;
+    height: 29px;
+    background-color: rgb(75, 75, 75);
+}
+
+.panel:nth-child(1){
+    --angle: 0deg;
+}
+.panel:nth-child(2){
+    --angle: 24deg;
+}
+.panel:nth-child(3){
+    --angle: 48deg;
+}
+.panel:nth-child(4){
+    --angle: 72deg;
+}
+.panel:nth-child(5){
+    --angle: 96deg;
+}
+.panel:nth-child(6){
+    --angle: 120deg;
+}
+.panel:nth-child(7){
+    --angle: 144deg;
+}
+.panel:nth-child(8){
+    --angle: 168deg;
+}
+.panel:nth-child(9){
+    --angle: 192deg;
+}
+.panel:nth-child(10){
+    --angle: 216deg;
+}
+.panel:nth-child(11){
+    --angle: 240deg;
+}
+.panel:nth-child(12){
+    --angle: 264deg;
+}
+.panel:nth-child(13){
+    --angle: 288deg;
+}
+.panel:nth-child(14){
+    --angle: 312deg;
+}
+.panel:nth-child(15){
+    --angle: 336deg;
+}
